@@ -5,12 +5,6 @@ var Row = require('./row');
 var actions = require('../actions/actions'),
     DataStore = require('../stores/data_store');
 
-/**
- * Remember to warn against and prohibit duplicate names
- * use `.toLowerCase()`
- */
-
-
 var guid = () => {
   var s4 = () => Math.floor((1 + Math.random()) * 0x10000)
     .toString(16)
@@ -49,9 +43,11 @@ var Table = React.createClass({
   },
   render() {
     return (
-      <div className=''>
-        <div onClick={this.addCat} className='icon'>
-          <i className="fa fa-plus"></i>
+      <div>
+        <div onClick={this.addCat} className='icon big add h-center mb2'>
+          <div className='h-center mt0'>
+            <i className="fa fa-plus h-center"></i>
+          </div>
         </div>
         <table>
           <thead>

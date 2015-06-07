@@ -63,6 +63,30 @@ table, td, th {
   padding: 10px;
 }
 
+input[type='text'] {
+  border: 0;
+  height: 20px;
+  width: 100%;
+  font-size: 15px;
+}
+input[type='text']:focus {
+  outline: none;
+}
+input[type='range'] {
+  -webkit-appearance: none;
+  width: 600px;
+}
+input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+}
+input[type=range]::-ms-track {
+  width: 100%;
+  cursor: pointer;
+  background: transparent;
+  border-color: transparent;
+  color: transparent;
+}
+
 .bg-black { background: #000000; }
 
 .h-center {
@@ -75,10 +99,12 @@ table, td, th {
 .pad3 { padding: 30px; }
 .pad4 { padding: 40px; }
 
-.mt1 { margin-top: 10px; }
-.mt2 { margin-top: 20px; }
-.mt3 { margin-top: 30px; }
-.mt4 { margin-top: 40px; }
+.mt00 { margin-top:  1px; }
+.mt0  { margin-top:  5px; }
+.mt1  { margin-top: 10px; }
+.mt2  { margin-top: 20px; }
+.mt3  { margin-top: 30px; }
+.mt4  { margin-top: 40px; }
 
 .mb1 { margin-bottom: 10px; }
 .mb2 { margin-bottom: 20px; }
@@ -87,7 +113,20 @@ table, td, th {
 
 .round { border-radius: 15px; }
 
-.icon:hover { color: #2ECC71; }
+.icon.big {
+  height: 40px;
+  width: 40px;
+  border-radius: 20px;
+}
+.icon.small {
+  height: 20px;
+  width: 20px;
+  border-radius: 10px;
+}
+.icon.add { background-color: #2ECC71; }
+.icon.remove { background-color: #CF000F }
+
+.big { font-size: 30px; }
 
 #app {
   width: 600px;

@@ -21,10 +21,9 @@ var Target = React.createClass({
           min='0'
           value={this.state.target}
           onChange={this.onChange}
-          className='h-center'
-          style={{width: 400}}
+          className='h-center mb2'
         />
-        <div className=''>{this.state.target}</div>
+        <div className='h-center mb4'>Target grade: {this.state.target}%</div>
       </div>
     );
   }

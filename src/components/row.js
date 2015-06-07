@@ -29,17 +29,33 @@ var Row = React.createClass({
   render() {
     return (
       <tr>
-        <td className='icon' onClick={this.remove}>
-          <i className="fa fa-times"></i>
+        <td onClick={this.remove}>
+          <div className='icon small remove h-center'>
+            <div className='h-center mt00'>
+              <i className="fa fa-times"></i>
+            </div>
+          </div>
         </td>
         <td>
-          <input type='text' onChange={this.onChange.bind(this, 'name')}/>
+          <input
+            type='text'
+            className='round'
+            onChange={this.onChange.bind(this, 'name')}
+          />
         </td>
         <td>
-          <input type='text' onChange={this.onChange.bind(this, 'weight')}/>
+          <input
+            type='text'
+            className='round'
+            onChange={this.onChange.bind(this, 'weight')}
+          />
         </td>
         <td>
-          <input type='text' onChange={this.onChange.bind(this, 'grades')}/>
+          <input
+            type='text'
+            className='round'
+            onChange={this.onChange.bind(this, 'grades')}
+          />
         </td>
         <td></td>
       </tr>

@@ -7,9 +7,7 @@ var App = React.createClass({
   render() {
     return (
       <div>
-        <div className='h-center mb2'>
-          <h1>GPA Tracker</h1>
-        </div>
+        <div className='h-center mb4 big'>GPA Tracker</div>
         <Target />
         <Table />
       </div>
