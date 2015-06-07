@@ -1,0 +1,40 @@
+{
+  "name": "gpa-tracker",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "browserify": {
+    "transform": [
+      "babelify"
+    ]
+  },
+  "scripts": {
+    "start": "budo ./index.js --serve=build/bundle.js --live -d | garnish",
+    "build": "browserify ./index.js | uglifyjs -c -m > build/bundle.js",
+    "test": "babel ./test/test.js > ./test/tmp.test.js && node ./test/tmp.test.js && rm ./test/tmp.test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kelvinabrokwa/gpa-tracker.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kelvinabrokwa/gpa-tracker/issues"
+  },
+  "homepage": "https://github.com/kelvinabrokwa/gpa-tracker",
+  "dependencies": {
+    "101": "^1.0.0",
+    "flux": "^2.0.3",
+    "react": "^0.13.3",
+    "xtend": "^4.0.0"
+  },
+  "devDependencies": {
+    "babelify": "^6.1.2",
+    "browserify": "^10.2.3",
+    "budo": "^4.0.0",
+    "garnish": "^2.1.3",
+    "tape": "^4.0.0",
+    "uglify-js": "^2.4.23"
+  }
+}
