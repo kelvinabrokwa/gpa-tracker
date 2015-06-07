@@ -40,7 +40,6 @@ var DataStore = xtend(EventEmitter.prototype, {
         data.cats = data.cats.filter(c => c.id !== action.id);
         break;
     }
-    console.log(JSON.stringify(data, null, 2))
     DataStore.emitChange(calculate(data));
     return true;
   })
