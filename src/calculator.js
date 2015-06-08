@@ -1,4 +1,3 @@
-module.exports = calculator;
 
 /**
  * Given an object return another object with ids in that first object
@@ -51,3 +50,5 @@ var calculator = (data) => {
     return out;
   }, {});
 };
+
+module.exports = calculator;
