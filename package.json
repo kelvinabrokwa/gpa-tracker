@@ -1,7 +1,7 @@
 {
   "name": "gpa-tracker",
   "version": "1.0.0",
-  "description": "",
+  "description": "track that shit son",
   "main": "index.js",
   "browserify": {
     "transform": [
@@ -11,13 +11,13 @@
   "scripts": {
     "start": "budo ./index.js --serve=build/bundle.js --live -d | garnish",
     "build": "browserify ./index.js | uglifyjs -c -m > build/bundle.js",
-    "test": "babel ./test/test.js > ./test/tmp.test.js && node ./test/tmp.test.js && rm ./test/tmp.test.js"
+    "test": "eslint src && node ./test/test.js --harmony"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/kelvinabrokwa/gpa-tracker.git"
   },
-  "author": "",
+  "author": "Kelvin Abrokwa-Johnson",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/kelvinabrokwa/gpa-tracker/issues"
@@ -30,6 +30,7 @@
     "xtend": "^4.0.0"
   },
   "devDependencies": {
+    "babel-eslint": "^3.1.14",
     "babelify": "^6.1.2",
     "browserify": "^10.2.3",
     "budo": "^4.0.0",

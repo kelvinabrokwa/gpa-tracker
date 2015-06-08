@@ -9,6 +9,9 @@
   ],
   "rules": {
     "strict": [0],
-    "quotes": [2, "single"]
+    "curly": [0],
+    "quotes": [2, "single"],
+    "no-underscore-dangle": [0],
+    "no-trailing-spaces": [2, { skipBlankLines: true }]
   }
 }

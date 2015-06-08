@@ -9,20 +9,20 @@ var Dispatcher = require('../dispatcher/dispatcher'),
 var data = {
   target: 100,
   cats: []
-}
+};
 
 var CHANGE_EVENT = 'change';
 
 var DataStore = xtend(EventEmitter.prototype, {
-  emitChange() {
-    this.emit(CHANGE_EVENT);
+  emitChange(d) {
+    this.emit(CHANGE_EVENT, d);
   },
   addChangeListener(callback) {
     this.on(CHANGE_EVENT, callback);
   },
   removeChangeListener(callback) {
     this.removeListener(CHANGE_EVENT, callback);
-  }, 
+  },
   dispatcherIndex: Dispatcher.register(payload => {
     var action = payload.action;
     switch(action.source) {

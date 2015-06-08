@@ -59,7 +59,7 @@ table {
 }
 
 table, td, th {
-  border: 1px solid #FFFFFF;
+  border: 1px solid #6C7A89;
   padding: 10px;
 }
 
@@ -68,23 +68,11 @@ input[type='text'] {
   height: 20px;
   width: 100%;
   font-size: 15px;
+  padding-left: 8px;
+  padding-right: 8px;
 }
 input[type='text']:focus {
   outline: none;
-}
-input[type='range'] {
-  -webkit-appearance: none;
-  width: 600px;
-}
-input[type=range]::-webkit-slider-thumb {
-  -webkit-appearance: none;
-}
-input[type=range]::-ms-track {
-  width: 100%;
-  cursor: pointer;
-  background: transparent;
-  border-color: transparent;
-  color: transparent;
 }
 
 .bg-black { background: #000000; }
@@ -99,7 +87,8 @@ input[type=range]::-ms-track {
 .pad3 { padding: 30px; }
 .pad4 { padding: 40px; }
 
-.mt00 { margin-top:  1px; }
+
+.mt00 { margin-top:  2px; }
 .mt0  { margin-top:  5px; }
 .mt1  { margin-top: 10px; }
 .mt2  { margin-top: 20px; }

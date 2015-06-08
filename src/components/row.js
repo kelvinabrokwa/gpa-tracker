@@ -27,6 +27,8 @@ var Row = React.createClass({
     this.props.remove(this.props.id);
   },
   render() {
+    var target = this.props.target ?
+      (Math.round(this.props.target * 100) / 100) + '%' : '';
     return (
       <tr>
         <td onClick={this.remove}>
@@ -57,7 +59,7 @@ var Row = React.createClass({
             onChange={this.onChange.bind(this, 'grades')}
           />
         </td>
-        <td></td>
+        <td><span className='h-center'>{target}</span></td>
       </tr>
     );
   }

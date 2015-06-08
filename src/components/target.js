@@ -1,7 +1,6 @@
 var React = require('react');
 
-var actions = require('../actions/actions'),
-    DataStore = require('../stores/data_store');
+var actions = require('../actions/actions');
 
 var Target = React.createClass({
   getInitialState() {
@@ -10,7 +9,7 @@ var Target = React.createClass({
   onChange(e) {
     this.setState({ target: e.target.value }, () => {
       actions.updateTarget(this.state.target);
-    })
+    });
   },
   render() {
     return (
@@ -23,7 +22,7 @@ var Target = React.createClass({
           onChange={this.onChange}
           className='h-center mb2'
         />
-        <div className='h-center mb4'>Target grade: {this.state.target}%</div>
+        <span className='h-center mb4'>Target grade: {this.state.target}%</span>
       </div>
     );
   }

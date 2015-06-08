@@ -11,19 +11,18 @@ var guid = () => {
     .substring(1);
   return s4() + s4() + '-' + s4() + '-' + s4() + '-' +
     s4() + '-' + s4() + s4() + s4();
-}
+};
 
 var Table = React.createClass({
   getInitialState() {
-    return { rows: [] };
+    return { rows: [], targets: {} };
   },
   componentWillMount() {
     DataStore.addChangeListener(this._onChange);
     this.addCat();
   },
   _onChange(t) {
-    console.log(t)
-    //this.setState({})
+    this.setState({ targets: t });
   },
   addCat() {
     var newId = guid();
@@ -35,13 +34,14 @@ var Table = React.createClass({
     });
     var rows = this.state.rows;
     rows.push(newId);
-    this.setState({ rows: rows }); 
+    this.setState({ rows: rows });
   },
   removeCat(id) {
     this.setState({ rows: this.state.rows.filter(r => r !== id) });
     actions.removeCat(id);
   },
   render() {
+    let targets = this.state.targets;
     return (
       <div>
         <div onClick={this.addCat} className='icon big add h-center mb2'>
@@ -52,22 +52,23 @@ var Table = React.createClass({
         <table>
           <thead>
             <td></td>
-            <td>Name</td>
-            <td>Weight</td>
-            <td>Grades</td>
-            <td>Needed</td>
+            <td><span className='h-center'>Name</span></td>
+            <td><span className='h-center'>Weight</span></td>
+            <td><span className='h-center'>Grades</span></td>
+            <td><span className='h-center'>Needed</span></td>
           </thead>
           <tbody>
             {this.state.rows.map(id => <Row
               key={id}
               id={id}
               remove={this.removeCat}  
+              target={id in targets ? targets[id] : ''}
             />)}
           </tbody>
         </table>
       </div>
     );
-  } 
+  }
 });
 
 module.exports = Table;

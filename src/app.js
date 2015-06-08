@@ -1,7 +1,7 @@
 var React = require('react');
 
 var Target = require('./components/target'),
-    Table =  require('./components/table');
+    Table = require('./components/table');
 
 var App = React.createClass({
   render() {
